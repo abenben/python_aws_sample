@@ -1,5 +1,5 @@
 # 1. [CLIコマンド基礎](./aws_cli_first)
 
-# Slack + Lambda(API Gateway)
+# 2. [Slack + Lambda(API Gateway)](./lambda_slack)
 
-# S3 + Lambda(API Gateway)
+# 3. [S3 + Lambda(API Gateway)](./s3web_api_lambda)
