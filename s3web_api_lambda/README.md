@@ -11,7 +11,7 @@ aws s3 mb s3://（任意のバケット名）
 ## チュートリアルのS3をコピー
 
 ```
-git clone abenben/python_aws_sample
+git clone https://github.com/abenben/python_aws_sample.git
 cd s3
 aws s3 cp ./ s3://（任意のバケット名） --recursive
 ```
