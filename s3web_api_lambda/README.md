@@ -48,9 +48,25 @@ aws s3 cp ./ s3://（任意のバケット名） --recursive
  
 チュートリアルのapp.pyの内容をコピペする。
 
-## API Gateway準備
+# API Gateway準備
 
-## ClouwWatch設定
+* 【注目ポイント】リリースの作成時にAPI Gateway CORS を有効にする
+* 【お薦め機能】APIキー認証機能
+
+# ClouwWatch設定
+
+## LambdaのClouwWatch
+
+* 最初から有効になっている
+* Pythonのprint文も出力されてしまう。
+* logginｇで制御するのが望ましい
+
+## API GatewayのClouwWatchを有効にする
+
+* 立ち上げ時のデバッグでは大切
+ * 各「ステージ」のステージエディターのルートを選ぶ
+  * 「ログ/トレース」で「CloudWatch ログを有効化」をチェックして、ログレベルをINFOに
 
 ## 動作確認
 
+https://abenben-test-web1.s3-ap-northeast-1.amazonaws.com/index.html
