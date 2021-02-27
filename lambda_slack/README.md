@@ -34,6 +34,8 @@ def lambda_handler(event, context):
 prodにデプロイ
 API Gatewayでテスト
 
+API GatewayはSwagger設定にも対応している。
+
 ## 3.Curlで疎通通信
 
 Curlからテスト
