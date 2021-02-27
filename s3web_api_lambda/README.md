@@ -48,7 +48,9 @@ aws s3 cp ./ s3://（任意のバケット名） --recursive
  
 チュートリアルのapp.pyの内容をコピペする。
 
-## API Gatewayの作成
+## API Gateway準備
+
+## ClouwWatch設定
 
 ## 動作確認
 
