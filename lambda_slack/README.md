@@ -97,3 +97,8 @@ https://nmmmk.hatenablog.com/entry/2018/10/10/001548
 localのDockerでテストしてからデプロイできる
 AWSのプロファイル切り替えに対応
 S3バケット経由でデプロイ（CDK）
+
+# 番外編（その2）
+
+AWS Chatbotをいうサービス自体があります（Slackと連携可能）。
+今回はLambdaやAPI Gatewatを理解するのが目的なのでこちらは使いません。
