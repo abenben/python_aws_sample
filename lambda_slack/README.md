@@ -15,7 +15,19 @@
 
 ### 疎通版を作成してテスト
 
-Lambdaでテスト
+function.py
+
+``` python
+def lambda_handler(event, context):
+    
+    # SlackのEvent APIの認証
+    if "challenge" in event:
+        return event["challenge"]
+    
+    return "OK"   
+```
+
+### Lambdaでテスト
 
 ## 2.API Gateway作成
 
