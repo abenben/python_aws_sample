@@ -39,9 +39,9 @@ API Gatewayでテスト
 
 API GatewayはSwagger設定にも対応している。
 
-## 3.Curlで疎通通信
+## 3.curlで疎通通信
 
-Curlからテスト
+curlからテスト
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{"nesseage":"100"}'  https://ps2wuqv8dg.execute-api.ap-northeast-1.amazonaws.com/prod/SlackTestAbe
