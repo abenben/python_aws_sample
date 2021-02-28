@@ -63,6 +63,55 @@ LambdaからDynamoDBへのアクセス権限付与
 
 ## 7.DynamoDB準備
 
+DynamoDBにサンプル格納
+
+```
+import boto3
+
+def create_movie_table(dynamodb=None):
+    if not dynamodb:
+        dynamodb = boto3.resource('dynamodb')
+
+    table = dynamodb.create_table(
+        TableName='sample01',
+        KeySchema=[
+            {
+                'AttributeName': 'ID',
+                'KeyType': 'HASH'  # Partition key
+            },
+        ],
+        AttributeDefinitions=[
+            {
+                'AttributeName': 'ID',
+                'AttributeType': 'N'
+            },
+        ],
+        ProvisionedThroughput={
+            'ReadCapacityUnits': 10,
+            'WriteCapacityUnits': 10
+        }
+    )
+    return table
+
+
+def input_table():
+    dynamodb = boto3.resource('dynamodb')
+    sample = dynamodb.Table('sample01')
+
+    data = {"ID": 1, "Message": "おはよう", "Price": 1000}
+    sample.put_item(Item=data)
+    data = {"ID": 2, "Message": "こんにちは", "Price": 2000}
+    sample.put_item(Item=data)
+    data = {"ID": 3, "Message": "こんばんは", "Price": 5000}
+    sample.put_item(Item=data)
+    return sample
+
+
+if __name__ == '__main__':
+    #create_movie_table()
+    input_table()
+```
+
 ## 8.Slackアプリをチャンネルに登録
 
 ## 9.Slackから動作確認
