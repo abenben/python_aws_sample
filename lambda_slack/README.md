@@ -116,10 +116,15 @@ if __name__ == '__main__':
 
 ## 9.Slackから動作確認
 
-## 10.Slackパッケージインストール
+## 10.slackbot パッケージインストール
 
 （続く）
 * パッケージの追加
+
+```
+pip3 install slackbot
+```
+
 * 汎用パッケージのLayerの追加
 
 ``` shell
