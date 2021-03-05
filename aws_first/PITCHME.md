@@ -63,7 +63,7 @@ AWS クラウドに立てられた仮想サーバーをインスタンスと呼�
 
 https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Home:
 
-<img src="aws_first/images/ec2-home.png" height="500">
+<img src="./images/ec2-home.png" height="500">
 
 ---
 
