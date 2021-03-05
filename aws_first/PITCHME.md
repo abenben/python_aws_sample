@@ -69,15 +69,15 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 #### 1.キーペアを作成する
 
-<img src="./images/keypair1.png" height="500"><br>
+<img src="./images/keypair1.png" height="700"><br>
 
-<img src="./images/keypair2.png" height="500"><br>
+<img src="./images/keypair2.png" height="450"><br>
 
-<img src="./images/keypair3.png" height="500"><br>
+<img src="./images/keypair3.png" height="100"><br>
 
 作成したファイルはしっかりと保存すること
 
-<img src="./images/keypair4.png" height="500"><br>
+<img src="./images/keypair4.png" height="100"><br>
 
 自分は .aws フォルダに格納している
 
