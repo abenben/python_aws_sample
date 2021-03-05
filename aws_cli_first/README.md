@@ -1,6 +1,10 @@
 <h1> AWS CLIの初期設定
 
+---
+
 # AWS CLIインストール
+
+* CLI Version 1.0
 
 ```
 $ sudo pip install awscli
@@ -9,6 +13,8 @@ or
 
 $ brew install awscli
 ```
+
+---
 
 # アクセスキーなどの設定
 
@@ -20,6 +26,8 @@ Default region name [None]: ap-northeast-1
 Default output format [None]: json
 ```
 
+---
+
 # 確認
 
 ```
@@ -27,11 +35,15 @@ $ aws configure list
 $ aws configure list --profile finpy
 ```
 
+--
+
 # デフォルト変更
 
 ```
 $ export AWS_DEFAULT_PROFILE=finpy
 ```
+
+---
 
 # S3バケットを作成
 
@@ -42,11 +54,15 @@ AWSコンソールから適当なユニークなバケット名を作成する�
 $ aws s3 mb s3://finpy-abenben-bucket
 ```
 
+---
+
 # S3バケットを確認
 
 ```
 $ aws s3 ls
 ```
+
+---
 
 # S3バケットにファイルをアップロード
 
@@ -55,6 +71,9 @@ $ cd /tmp
 $ echo "test" > sample.txt
 $ aws s3 cp ./sample.txt s3://finpy-abenben-bucket
 ```
+
+---
+
 # S3バケットからファイルをダウンロード
 
 ```
@@ -68,12 +87,17 @@ $ rm ./sample.txt
 
 ```
 
+---
+
 # Pythonからもダウンロードしてみる
 
-boto3をインストール
+* ① boto3をインストール
+
 ```
 pip3 install boto3
 ```
+
+* ② boto3でS3からファイルをダウンロード
 
 ```
 python

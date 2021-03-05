@@ -20,6 +20,7 @@ def lambda_handler(event, context):
 
 ```
 
+---
 
 # 2.CloudWatch Eventsで設定
 
