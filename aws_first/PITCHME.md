@@ -29,11 +29,10 @@ finpy / abenben
 
 * EC2
 * EBS
-* S3
 
 ---
 
-## EC2とは
+## EC2
 
 Amazon EC2（Amazon Elastic Compute Cloud）とは、AWSが提供する「仮想サーバー」のことです。EC2を用いてLinuxやWindowsなどさまざまなOSの仮想サーバーをすぐに実行できる環境を用意することができます。Amazon EC2では、複数の仮想サーバーを立てることができます。
 
@@ -45,12 +44,18 @@ AWS クラウドに立てられた仮想サーバーをインスタンスと呼�
 
 ---
 
-## EC2の操作
+## Amazon EBS
 
-1.下準備
-2.AWSのコンソールから作成する
-3.CLIから
-4.Botoから
+Amazon EBS（Amazon Elastic Block Store）は、AWS上で操作できる仮想ディスクです。管理コンソールからEBSボリュームを作って、それをサーバーインスタンスへ接続、切断できます。接続することをアタッチ、切断をデタッチと呼びます。
+
+---
+
+## EC2の制御
+
+1. 下準備（キーペアの作成）
+1. AWSコンソールからEC2インスタンスを作成
+1. CLIから起動・停止
+1. Botoからから起動・停止
 
 ---
 
@@ -61,7 +66,11 @@ AWS クラウドに立てられた仮想サーバーをインスタンスと呼�
 
 #### EC2のコンソールを開く
 
+* ①EC2のダッシュボードを表示する
+
 https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Home:
+
+* 画面イメージ
 
 <img src="./images/ec2-home.png" height="800"><br>
 
@@ -69,13 +78,20 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 #### 1.キーペアを作成する
 
+* ①左下にある「キーペア」をクリックする
+
 <img src="./images/keypair1.png" height="600"><br>
+
+* ②「キーペアを作成」ボタンをクリック
 
 <img src="./images/keypair2.png" height="130"><br>
 
+* ③「名前」にキーペアに任意のを入力し、「キーペアを作成」ボタンをクリック
+
 <img src="./images/keypair3.png" height="400"><br>
 
-作成したファイルはしっかりと保存すること
+* ④pemファイルがダウンロードされる。
+ * 作成したファイルはしっかりと保存すること
 
 <img src="./images/keypair4.png" height="200"><br>
 
@@ -230,13 +246,14 @@ https://aws.amazon.com/amazon-linux-2/
 
 ## EC2からCLIコマンドを動かす
 
-* デフォルトで導入されている
+* Amazon Linux2にはCLIがデフォルトで導入されている。
+
+* S3バケットの一覧を表示する。
 
 ``` shell
 $ aws s3 ls
 ```
 
----
 
 ---
 
@@ -261,7 +278,36 @@ $ jupyter notebook --ip='0.0.0.0'
 
 ---
 
-## セッションマネージャーを理解する
+## セッションマネージャーとは
+
+* セッションマネージャを使えば、鍵管理不要でセキュアなサーバが作れます。
+
+---
+
+## セッションマネージャーのアージェントを起動する
+
+* ①EC2にログインする
+
+``` shell
+$ ssh -i （キーペアファイル） ec2-user@（グローバルIP）# 下は実行例
+$ ssh -i ./.aws/finpy-test-abenben-01.pem ec2-user@18.183.35.172
+```
+
+* ②セッションマネージャーのエージェントのステータスを確認する
+
+``` shell
+$ sudo systemctl status amazon-ssm-agent
+```
+
+* ③セッションマネージャーのエージェントを有効にする
+
+``` shell
+$ sudo systemctl enable amazon-ssm-agent
+$ sudo systemctl start amazon-ssm-agent
+$ sudo systemctl status amazon-ssm-agent
+```
+
+## セッションマネージャーでログインする
 
 ---
 
@@ -271,11 +317,6 @@ $ jupyter notebook --ip='0.0.0.0'
 
 ## OSイメージからインスタンスを起動する
 
----
-
-## Amazon EBS
-
-Amazon EBS（Amazon Elastic Block Store）は、AWS上で操作できる仮想ディスクです。管理コンソールからEBSボリュームを作って、それをサーバーインスタンスへ接続、切断できます。接続することをアタッチ、切断をデタッチと呼びます。
 
 ---
 
