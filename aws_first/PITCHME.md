@@ -2,6 +2,9 @@
 
 2021年3月6日[Sat] / AWS
 
+
+https://github.com/abenben/python_aws_sample/blob/main/aws_first/PITCHME.md
+
 finpy / abenben
 
 ---
@@ -22,6 +25,17 @@ finpy / abenben
   * 2021年3月10日(水)20:00〜20:30
 * [保険×AI×プラットフォーム（フィンテックエンジニア養成勉強会#14）](https://fintech-engineer.connpass.com/event/205267/)
   * 2021年4月8日(木)19:00〜21:00
+
+---
+
+前準備
+
+CLIコマンドのデフォルト設定
+
+```
+export AWS_DEFAULT_PROFILE=<プロファイル名> # 以下に例
+export AWS_DEFAULT_PROFILE=default
+```
 
 ---
 
@@ -100,6 +114,57 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 ---
 
 #### 2.コンソールからEC2のインスタンスを作成する(1)
+
+* ① EC2インスタンス画面を開く
+
+https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Instances:
+
+* ② コンソールでインスタンスを生成する
+
+1.
+
+<img src="./images/ec2-1.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-2.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-3.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-4.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-5.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-6.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-7.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-8.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-9.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-a.png" height="400"><br>
+
+1.
+
+<img src="./images/ec2-b.png" height="400"><br>
+
 
 ---
 
