@@ -63,17 +63,17 @@ AWS クラウドに立てられた仮想サーバーをインスタンスと呼�
 
 https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Home:
 
-<img src="./images/ec2-home.png" height="600"><br>
+<img src="./images/ec2-home.png" height="800"><br>
 
 ---
 
 #### 1.キーペアを作成する
 
-<img src="./images/keypair1.png" height="500"><br>
+<img src="./images/keypair1.png" height="600"><br>
 
-<img src="./images/keypair2.png" height="200"><br>
+<img src="./images/keypair2.png" height="130"><br>
 
-<img src="./images/keypair3.png" height="200"><br>
+<img src="./images/keypair3.png" height="400"><br>
 
 作成したファイルはしっかりと保存すること
 
