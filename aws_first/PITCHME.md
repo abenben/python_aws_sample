@@ -69,7 +69,6 @@ Amazon EBS（Amazon Elastic Block Store）は、AWS上で操作できる仮想�
 1. 下準備（キーペアの作成）
 1. AWSコンソールからEC2インスタンスを作成
 1. CLIから起動・停止
-1. Botoからから起動・停止
 
 ---
 
