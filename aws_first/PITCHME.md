@@ -121,49 +121,75 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 * ② コンソールでインスタンスを生成する
 
-1.
-
 <img src="./images/ec2-1.png" height="400"><br>
-
-1.
 
 <img src="./images/ec2-2.png" height="400"><br>
 
-1.
-
 <img src="./images/ec2-3.png" height="400"><br>
-
-1.
 
 <img src="./images/ec2-4.png" height="400"><br>
 
-1.
-
 <img src="./images/ec2-5.png" height="400"><br>
-
-1.
 
 <img src="./images/ec2-6.png" height="400"><br>
 
-1.
-
 <img src="./images/ec2-7.png" height="400"><br>
-
-1.
 
 <img src="./images/ec2-8.png" height="400"><br>
 
-1.
-
 <img src="./images/ec2-9.png" height="400"><br>
-
-1.
 
 <img src="./images/ec2-a.png" height="400"><br>
 
-1.
-
 <img src="./images/ec2-b.png" height="400"><br>
+
+---
+
+#### EC2への接続方法
+
+<img src="./images/ec2-con-1.png" height="400"><br>
+
+<img src="./images/ec2-con-2.png" height="400"><br>
+
+---
+
+#### EC2への接続1（EC2 Instance Connect）
+
+<img src="./images/ec2-connect-1.png" height="400"><br>
+
+<img src="./images/ec2-connect-2.png" height="400"><br>
+
+---
+
+#### EC2への接続2（セッションマネージャー）
+
+<img src="./images/ec2-ssm-1.png" height="400"><br>
+
+<img src="./images/ec2-ssm-1.png" height="400"><br>
+
+---
+
+#### EC2への接続3（SSH）
+
+<img src="./images/ec2-ssh-1.png" height="400"><br>
+
+sshでログインする
+
+``` shell
+$ ssh -i （キーペアファイル） ec2-user@（グローバルIP）# 下は実行例
+$ ssh -i ./.aws/finpy-test-abenben-01.pem ec2-user@18.183.35.172
+The authenticity of host '18.183.35.172 (18.183.35.172)' can't be established.
+ECDSA key fingerprint is SHA256:bMhcSc4cwjYW8amG3QM1yAXLL/QI5NecEHUh4H2nCCA.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '18.183.35.172' (ECDSA) to the list of known hosts.
+Last login: Fri Mar  5 20:31:03 2021 from fp9f1ca1d2.chbd116.ap.nuro.jp
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+```
 
 
 ---
@@ -173,6 +199,8 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 ---
 
 #### 4.コンソールからEC2のインスタンスを起動する
+
+---
 
 ---
 
