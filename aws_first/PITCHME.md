@@ -135,9 +135,9 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 <img src="./images/ec2-7.png" height="800"><br>
 
-<img src="./images/ec2-8.png" height="800"><br>
+<img src="./images/ec2-8.png" height="400"><br>
 
-<img src="./images/ec2-9.png" height="800"><br>
+<img src="./images/ec2-9.png" height="500"><br>
 
 <img src="./images/ec2-a.png" height="800"><br>
 
@@ -147,31 +147,31 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 #### EC2への接続方法
 
-<img src="./images/ec2-con-1.png" height="400"><br>
+<img src="./images/ec2-con-1.png" height="800"><br>
 
-<img src="./images/ec2-con-2.png" height="400"><br>
+<img src="./images/ec2-con-2.png" height="800"><br>
 
 ---
 
 #### EC2への接続1（EC2 Instance Connect）
 
-<img src="./images/ec2-connect-1.png" height="400"><br>
+<img src="./images/ec2-connect-1.png" height="800"><br>
 
-<img src="./images/ec2-connect-2.png" height="400"><br>
+<img src="./images/ec2-connect-2.png" height="800"><br>
 
 ---
 
 #### EC2への接続2（セッションマネージャー）
 
-<img src="./images/ec2-ssm-1.png" height="400"><br>
+<img src="./images/ec2-ssm-1.png" height="800"><br>
 
-<img src="./images/ec2-ssm-1.png" height="400"><br>
+<img src="./images/ec2-ssm-1.png" height="800"><br>
 
 ---
 
 #### EC2への接続3（SSH）
 
-<img src="./images/ec2-ssh-1.png" height="400"><br>
+<img src="./images/ec2-ssh-1.png" height="800"><br>
 
 sshでログインする
 
