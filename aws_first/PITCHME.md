@@ -1,4 +1,4 @@
-### AWS初級
+# AWS初級
 
 2021年3月6日[Sat] / AWS
 
@@ -9,7 +9,7 @@ finpy / abenben
 
 ---
 
-### アジェンダ
+# アジェンダ
 
 * AWSのサービスの種類
 * EC2を操作
@@ -17,7 +17,7 @@ finpy / abenben
 
 ---
 
-### お知らせ
+# お知らせ
 
 * [JAWS DAYS 2021](https://jawsdays2021.jaws-ug.jp/)
   * 2021年3月14日(日)9:50〜20:00
@@ -28,9 +28,9 @@ finpy / abenben
 
 ---
 
-前準備
+# 前準備
 
-CLIコマンドのデフォルト設定
+* ローカルからCLIを使う準備(CLIコマンドのデフォルト設定)
 
 ```
 export AWS_DEFAULT_PROFILE=<プロファイル名> # 以下に例
@@ -39,7 +39,7 @@ export AWS_DEFAULT_PROFILE=default
 
 ---
 
-### AWSのサービスの概要（一部）
+# AWSのサービスの概要（一部）
 
 * EC2
 * EBS
@@ -64,7 +64,7 @@ Amazon EBS（Amazon Elastic Block Store）は、AWS上で操作できる仮想�
 
 ---
 
-## EC2の制御
+# 1.EC2の制御
 
 1. 下準備（キーペアの作成）
 1. AWSコンソールからEC2インスタンスを作成
@@ -73,12 +73,12 @@ Amazon EBS（Amazon Elastic Block Store）は、AWS上で操作できる仮想�
 
 ---
 
-### AWSコンソールでEC2を作成、起動、停止する
+## 1.1.AWSコンソールでEC2を作成、起動、停止する
 
 
 ---
 
-#### EC2のコンソールを開く
+### 1.1.1.EC2のコンソールを開く
 
 * ①EC2のダッシュボードを表示する
 
@@ -90,7 +90,7 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 ---
 
-#### 1.キーペアを作成する
+### 1.1.2.キーペアを作成する
 
 * ①左下にある「キーペア」をクリックする
 
@@ -113,7 +113,7 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 ---
 
-#### 2.コンソールからEC2のインスタンスを作成する(1)
+### 1.1.3.コンソールからEC2のインスタンスを作成する(1)
 
 * ① EC2インスタンス画面を開く
 
@@ -145,7 +145,7 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 ---
 
-#### EC2への接続方法
+### 1.1.4.EC2への接続方法
 
 <img src="./images/ec2-con-1.png" height="800"><br>
 
@@ -153,7 +153,7 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 ---
 
-#### EC2への接続1（EC2 Instance Connect）
+### 1.1.5.EC2への接続1（EC2 Instance Connect）
 
 <img src="./images/ec2-connect-1.png" height="800"><br>
 
@@ -161,7 +161,7 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 ---
 
-#### EC2への接続2（セッションマネージャー）
+### 1.1.6.EC2への接続2（セッションマネージャー）
 
 <img src="./images/ec2-ssm-1.png" height="800"><br>
 
@@ -169,7 +169,7 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 ---
 
-#### EC2への接続3（SSH）
+### 1.1.7.EC2への接続3（SSH）
 
 <img src="./images/ec2-ssh-1.png" height="800"><br>
 
@@ -194,25 +194,29 @@ https://aws.amazon.com/amazon-linux-2/
 
 ---
 
-#### 3.コンソールからEC2のインスタンスを停止する
+### 1.1.8.コンソールからEC2のインスタンスを停止する
 
 ---
 
-#### 4.コンソールからEC2のインスタンスを起動する
+### 1.1.9.コンソールからEC2のインスタンスを起動する
 
 ---
 
 ---
 
-#### （ポイント1）ロールの設定
+### 1.1.a.（ポイント1）ロールの設定
 
 ---
 
-#### （ポイント2）セキュリティグループの設定
+### 1.1.b. （ポイント2）セキュリティグループの設定
 
 ---
 
-## CLIでインスタンスの一覧を取得する
+### 1.2.CLIから操作する
+
+---
+
+### 1.2.1.CLIでインスタンスの一覧を取得する
 
 ``` shell
 $ aws ec2 describe-instances --output=table --query 'Reservations[].Instances[].{InstanceId: InstanceId, PrivateIp: join(`, `, NetworkInterfaces[].PrivateIpAddress), GlobalIP: join(`, `, NetworkInterfaces[].Association.PublicIp), Platform:Platform, State: State.Name, SecurityGroupId: join(`, `, SecurityGroups[].GroupId) ,Name: Tags[?Key==`Name`].Value|[0]}'
@@ -232,7 +236,7 @@ $ aws ec2 describe-instances --output=table --query 'Reservations[].Instances[].
 
 ---
 
-## EC2でインスタンスを起動する
+### 1.2.2.EC2でインスタンスを起動する
 
 ``` shell
 $ aws ec2 start-instances --instance-ids （インスタンスID）　# 下は実行例
@@ -256,7 +260,7 @@ $ aws ec2 start-instances --instance-ids i-0040e01748bce52ac
 
 ---
 
-## 先ほどのコマンドでもう一度ステータスを確認する
+### 1.2.3.先ほどのコマンドでもう一度ステータスを確認する
 
 ``` shell
 $ aws ec2 describe-instances --output=table --query 'Reservations[].Instances[].{InstanceId: InstanceId, PrivateIp: join(`, `, NetworkInterfaces[].PrivateIpAddress), GlobalIP: join(`, `, NetworkInterfaces[].Association.PublicIp), Platform:Platform, State: State.Name, SecurityGroupId: join(`, `, SecurityGroups[].GroupId) ,Name: Tags[?Key==`Name`].Value|[0]}'
@@ -273,7 +277,7 @@ $ aws ec2 describe-instances --output=table --query 'Reservations[].Instances[].
 
 ---
 
-## （補足）個別のインスタンスを指定して状態確認する方法
+### 1.2.a. （補足）個別のインスタンスを指定して状態確認する方法
 
 ``` shell
 $ aws ec2 describe-instance-status --instance-ids （インスタンスID）　# 下は実行例
@@ -312,12 +316,12 @@ $ aws ec2 describe-instance-status --instance-ids i-0040e01748bce52ac
 
 ---
 
-## （補足）CLIでキーペアの一覧を確認する
+### 1.2.b. （補足）CLIでキーペアの一覧を確認する
 
 
 ---
 
-## SSHでEC2にログインする
+### 1.2.4.ローカルPCからSSHでEC2へログインする
 
 ``` shell
 $ ssh -i （キーペアファイル） ec2-user@（グローバルIP）# 下は実行例
@@ -337,7 +341,7 @@ https://aws.amazon.com/amazon-linux-2/
 
 ---
 
-## EC2からCLIコマンドを動かす
+### 1.2.5.EC2からCLIコマンドを動かす
 
 * Amazon Linux2にはCLIがデフォルトで導入されている。
 
@@ -347,10 +351,9 @@ https://aws.amazon.com/amazon-linux-2/
 $ aws s3 ls
 ```
 
-
 ---
 
-## Python3とJupterインストール
+### 1.2.6.Python3とJupterインストール
 
 ``` shell
 $ sudo amazon-linux-extras install python3
@@ -371,13 +374,13 @@ $ jupyter notebook --ip='0.0.0.0'
 
 ---
 
-## セッションマネージャーとは
+## 1.3.復習.セッションマネージャーとは
 
 * セッションマネージャを使えば、鍵管理不要でセキュアなサーバが作れます。
 
 ---
 
-## セッションマネージャーのアージェントを起動する
+### 1.3.1.セッションマネージャーのアージェントを起動する
 
 * ①EC2にログインする
 
@@ -399,8 +402,6 @@ $ sudo systemctl enable amazon-ssm-agent
 $ sudo systemctl start amazon-ssm-agent
 $ sudo systemctl status amazon-ssm-agent
 ```
-
-## セッションマネージャーでログインする
 
 ---
 
