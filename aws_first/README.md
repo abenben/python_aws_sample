@@ -462,10 +462,13 @@ $ sudo systemctl status amazon-ssm-agent
 
 ## OSのイメージを作成する
 
+（次回以降で説明）
+
 ---
 
 ## OSイメージからインスタンスを起動する
 
+（次回以降で説明）
 
 ---
 
