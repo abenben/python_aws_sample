@@ -196,9 +196,22 @@ https://aws.amazon.com/amazon-linux-2/
 
 ### 1.1.8.コンソールからEC2のインスタンスを停止する
 
+<img src="./images/ec2-console-stop-1.png" height="800"><br>
+
+<img src="./images/ec2-console-stop-2.png" height="800"><br>
+
+<img src="./images/ec2-console-stop-3.png" height="800"><br>
+
 ---
 
 ### 1.1.9.コンソールからEC2のインスタンスを起動する
+
+
+<img src="./images/ec2-console-start-1.png" height="800"><br>
+
+<img src="./images/ec2-console-start-2.png" height="800"><br>
+
+<img src="./images/ec2-console-start-3.png" height="800"><br>
 
 ---
 
@@ -206,9 +219,42 @@ https://aws.amazon.com/amazon-linux-2/
 
 ### 1.1.a.（ポイント1）ロールの設定
 
+* ①IAMの設定
+
+https://console.aws.amazon.com/iam/home?region=ap-northeast-1#/home
+
+<img src="./images/ec2-console-role-1" height="800"><br>
+
+* ②ロールの一覧
+
+https://console.aws.amazon.com/iam/home?region=ap-northeast-1#/roles
+
+<img src="./images/ec2-console-role-2" height="800"><br>
+
+* ③今回のチュートリアル用に作成したEC2で利用できる権限を付与したトール
+ * EC2フルアクセス
+ * S3フルアクセス
+ * セッションマネージャーフルアクセス（後述）
+
+https://console.aws.amazon.com/iam/home?region=ap-northeast-1#/roles/role-ec2-tutorial
+
+<img src="./images/ec2-console-role-3" height="800"><br>
+
 ---
 
 ### 1.1.b. （ポイント2）セキュリティグループの設定
+
+* ①セキュリティグループの一覧
+
+https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#SecurityGroups:
+
+<img src="./images/ec2-console-sg-1" height="800"><br>
+
+* ②今回のチュートリアル用に作成したセキュリティグループの設定
+
+https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#SecurityGroup:groupId=sg-082173760985e3a39
+
+<img src="./images/ec2-console-sg-2" height="800"><br>
 
 ---
 
@@ -402,6 +448,16 @@ $ sudo systemctl enable amazon-ssm-agent
 $ sudo systemctl start amazon-ssm-agent
 $ sudo systemctl status amazon-ssm-agent
 ```
+
+---
+
+## 1.4.EC2のインスタンス破棄
+
+<img src="./images/ec2-console-destroy-1.png" height="800"><br>
+
+<img src="./images/ec2-console-destroy-2.png" height="800"><br>
+
+<img src="./images/ec2-console-destroy-3.png" height="800"><br>
 
 ---
 
