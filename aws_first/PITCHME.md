@@ -121,27 +121,27 @@ https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#
 
 * ② コンソールでインスタンスを生成する
 
-<img src="./images/ec2-1.png" height="400"><br>
+<img src="./images/ec2-1.png" height="800"><br>
 
-<img src="./images/ec2-2.png" height="400"><br>
+<img src="./images/ec2-2.png" height="800"><br>
 
-<img src="./images/ec2-3.png" height="400"><br>
+<img src="./images/ec2-3.png" height="800"><br>
 
-<img src="./images/ec2-4.png" height="400"><br>
+<img src="./images/ec2-4.png" height="800"><br>
 
-<img src="./images/ec2-5.png" height="400"><br>
+<img src="./images/ec2-5.png" height="800"><br>
 
-<img src="./images/ec2-6.png" height="400"><br>
+<img src="./images/ec2-6.png" height="800"><br>
 
-<img src="./images/ec2-7.png" height="400"><br>
+<img src="./images/ec2-7.png" height="800"><br>
 
-<img src="./images/ec2-8.png" height="400"><br>
+<img src="./images/ec2-8.png" height="800"><br>
 
-<img src="./images/ec2-9.png" height="400"><br>
+<img src="./images/ec2-9.png" height="800"><br>
 
-<img src="./images/ec2-a.png" height="400"><br>
+<img src="./images/ec2-a.png" height="800"><br>
 
-<img src="./images/ec2-b.png" height="400"><br>
+<img src="./images/ec2-b.png" height="800"><br>
 
 ---
 
