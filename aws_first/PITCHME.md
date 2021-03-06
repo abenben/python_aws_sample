@@ -196,22 +196,22 @@ https://aws.amazon.com/amazon-linux-2/
 
 ### 1.1.8.コンソールからEC2のインスタンスを停止する
 
-<img src="./images/ec2-console-stop-1.png" height="800"><br>
+<img src="./images/ec2-console-stop-1.png" height="500"><br>
 
-<img src="./images/ec2-console-stop-2.png" height="800"><br>
+<img src="./images/ec2-console-stop-2.png" height="500"><br>
 
-<img src="./images/ec2-console-stop-3.png" height="800"><br>
+<img src="./images/ec2-console-stop-3.png" height="500"><br>
 
 ---
 
 ### 1.1.9.コンソールからEC2のインスタンスを起動する
 
 
-<img src="./images/ec2-console-start-1.png" height="800"><br>
+<img src="./images/ec2-console-start-1.png" height="500"><br>
 
-<img src="./images/ec2-console-start-2.png" height="800"><br>
+<img src="./images/ec2-console-start-2.png" height="500"><br>
 
-<img src="./images/ec2-console-start-3.png" height="800"><br>
+<img src="./images/ec2-console-start-3.png" height="500"><br>
 
 ---
 
