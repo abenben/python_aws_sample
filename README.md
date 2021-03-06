@@ -1,3 +1,5 @@
+# 0. [AWS初級](./aws_first)
+
 # 1. [CLIコマンド基礎](./aws_cli_first)
 
 # 2. [Slack + Lambda(API Gateway)](./lambda_slack)
