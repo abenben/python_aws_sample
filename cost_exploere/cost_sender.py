@@ -8,10 +8,8 @@ import json
 import requests
 from datetime import datetime, timedelta, date
 
-#SLACK_WEBHOOK_URL = os.environ['SLACK_WEBHOOK_URL']
-
 def lambda_handler(event, context) -> None:
-    client = boto3.client('ce', region_name='us-east-1')
+    client = boto3.client('ce', region_name='ap-northeast-1')
 
     # 合計とサービス毎の請求額を取得する
     total_billing = get_total_billing(client)
@@ -21,7 +19,7 @@ def lambda_handler(event, context) -> None:
     (title, detail) = get_message(total_billing, service_billings)
     print(title)
     print(detail)
-    #post_slack(title, detail)
+    post_mail(title, detail)
 
 
 def get_total_billing(client) -> dict:
@@ -100,27 +98,37 @@ def get_message(total_billing: dict, service_billings: list) -> (str, str):
     return title, '\n'.join(details)
 
 
-def post_slack(title: str, detail: str) -> None:
-    # https://api.slack.com/incoming-webhooks
-    # https://api.slack.com/docs/message-formatting
-    # https://api.slack.com/docs/messages/builder
-    payload = {
-        'attachments': [
-            {
-                'color': '#36a64f',
-                'pretext': title,
-                'text': detail
-            }
-        ]
-    }
+CHARSET = "UTF-8"
 
-    # http://requests-docs-ja.readthedocs.io/en/latest/user/quickstart/
-    try:
-        response = requests.post(SLACK_WEBHOOK_URL, data=json.dumps(payload))
-    except requests.exceptions.RequestException as e:
-        print(e)
-    else:
-        print(response.status_code)
+def post_mail(title: str, detail: str) -> None:
+
+    # タイトルを決めてもらう
+    SUBJECT = "AWSコスト"
+
+    # フッダーを付けてもらう
+
+    client = boto3.client('ses', region_name="ap-northeast-1")
+
+    response = client.send_email(
+        Source="abenbenben@gmail.com",
+        Destination={
+            'ToAddresses': [
+                "abenbenben@gmail.com"
+            ]
+        },
+        Message={
+            'Body': {
+                'Text': {
+                    'Charset': CHARSET,
+                    'Data': detail
+                }
+            },
+            'Subject': {
+                'Charset': CHARSET,
+                'Data': title
+            },
+        }
+    )
 
 
 def get_total_cost_date_range() -> (str, str):
